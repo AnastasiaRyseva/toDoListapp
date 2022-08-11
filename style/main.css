@@ -1,0 +1,111 @@
+ul {
+    list-style: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+}
+
+.container {
+    padding: 30px;
+    width: 90%;
+    background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+    border-radius: 20px;
+}
+
+.main {
+    display: flex;
+    margin-top: 100px;
+    gap: 10%;
+}
+/*классы для состояний задач*/
+.done {
+    background-color: #b1ff9a;
+    border-radius: 3px;
+    padding: 5px;
+}
+.progress {
+    background-color: #5fc3e4;
+    border-radius: 3px;
+    padding: 5px;
+}
+/*-----------*/
+
+.allTasks {
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+
+.createsTasks {
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+/*Область с задачами*/
+
+
+
+.allTasks {
+    background-color: #fff0f5;
+    border-radius: 20px;
+    opacity: 70%;
+    padding: 10px;
+}
+
+.empty-list__logo:hover {
+    opacity: 30%;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.task-title {
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-item__buttons_btn img {
+    pointer-events: none;
+}
+
+/*Форма для добавления новых задач*/
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    width: 60%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-submit {
+    border-color: #00bfff;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #00bfff inset, 0 0 0 0 #abcdef;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.form-submit:hover {
+    box-shadow: 0 0 10px 0 #abcdef inset, 0 0 10px 4px #abcdef;
+}

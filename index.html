@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toDoList</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>toDo приложение</h1>
+            <p>твой список задач на сегодня</p>
+        </header>
+        <main class ="main">
+
+            <!--Область с задачами-->
+            <div class="allTasks">
+
+                <ul class="allTasksList">
+                    <!--
+                    <li id="emptyList" class="emptyList">
+                        <img src="./img/logo.svg" alt="Empty" width="50px" class="empty-list__logo">
+                        <div class="empty-list__title">Список дел пуст</div>
+                    </li> 
+                    -->
+                    <li class="task-item"><!--
+                        <span class="task-title">
+                            Купить сахар
+                        </span>
+                        <div class="task-item__buttons">
+                            <button type="button" data-action="progress" class="task-item__buttons_btn">
+                                <img src="./img/progress.svg" alt="Progress" width="10" height="10">
+                            </button>
+                            <button type="button" data-action="done" class="task-item__buttons_btn">
+                                <img src="./img/tick.svg" alt="Done" width="10" height="10">
+                            </button>
+                            <button type="button" data-action="delete" class="task-item__buttons_btn">
+                                <img src="./img/cross.svg" alt="Delete" width="10" height="10">
+                            </button>
+                        </div> -->
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!--Форма для добавления новых задач-->
+            <div class="createsTasks">
+                <div class="createsTasks-title">
+                    Добавить новую задачу
+                </div>
+				<form id="form">
+					<div class="form-group">
+						<input type="text" class="form-control" id="taskInput" placeholder="Текст задачи" required>
+						<small id="emailHelp" class="form-text">Что делаем, сколько времени тратим, какой результат получаем.</small>
+					</div>
+					<button type="submit" class="form-submit">Добавить</button>
+				</form>
+			</div>
+
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
