@@ -24,6 +24,7 @@ body {
     margin-top: 100px;
     gap: 10%;
 }
+
 /*классы для состояний задач*/
 .done {
     background-color: #b1ff9a;
@@ -73,6 +74,14 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.task-title:focus {
+    outline: 1px solid;
+    padding: 5px;
 }
 
 .task-item__buttons_btn img {
