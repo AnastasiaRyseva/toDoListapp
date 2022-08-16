@@ -109,3 +109,7 @@ body {
 .form-submit:hover {
     box-shadow: 0 0 10px 0 #abcdef inset, 0 0 10px 4px #abcdef;
 }
+
+.hide {
+    display: none;
+}

@@ -2,12 +2,15 @@ const createsTaskForm = document.querySelector('#form');
 const taskInput = document.querySelector('#taskInput');
 const allTasksList = document.querySelector('.allTasksList');
 const emptyList = document.querySelector('#emptyList');
+const search = document.querySelector('#search');
 
 let tasks = [];
 
 getItemLocalStorage()
 
 changeEmptyList();
+
+showSearch();
 
 //добавляет новую задачу
 createsTaskForm.addEventListener('submit', addTask);
@@ -48,6 +51,8 @@ function addTask (event) {
 
     changeEmptyList();
 
+    showSearch();
+
     saveToLocalStorage();
 };
 
@@ -65,6 +70,27 @@ function changeEmptyList() {
         const taskListElement = document.querySelector('#emptyList')
         taskListElement ? taskListElement.remove() : null;
     }
+}
+
+// скрывает или показывает поле поиска
+function showSearch() {
+
+    if (tasks.length > 0) {
+        const Element = document.querySelector('#search')
+        if (!Element) {
+                    const showSearchHTML = `<li id='search'>
+        <input type="text" id="taskSearch" placeholder="найди задачу">
+    </li>`
+        allTasksList.insertAdjacentHTML('afterbegin', showSearchHTML)
+        }
+
+    }
+
+    if (tasks.length === 0) {
+        const Element = document.querySelector('#search')
+        Element ? Element.remove() : null;
+    }
+
 }
 
 function deleteTask (event) {
@@ -89,6 +115,8 @@ function deleteTask (event) {
     parentNode.remove();
 
     changeEmptyList();
+
+    showSearch();
 
     saveToLocalStorage();
 }
@@ -174,3 +202,26 @@ function renderTask(task) {
 };
 
 
+
+// реализация поиска по задачам
+document.querySelector('#taskSearch').oninput = function () {
+    let val = this.value.trim();
+    let taskForSearch = document.querySelectorAll('.task-item');
+        if (val != '') {
+            taskForSearch.forEach(function (elem) {
+                if (elem.innerText.search((RegExp(val,"gi"))) == -1) {
+                    elem.classList.add('hide');
+                }
+                else {
+                    elem.classList.remove('hide');
+                }
+            });
+        }
+        else {
+            taskForSearch.forEach(function (elem) {
+               
+                    elem.classList.remove('hide');
+                
+              });
+        }
+}
