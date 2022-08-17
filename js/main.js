@@ -224,7 +224,7 @@ document.querySelector('#taskSearch').oninput = function () {
 }
 
 
-
+// реализация возможности редактировать задачу
 function editTask(event) {
 
     // элемент списка
